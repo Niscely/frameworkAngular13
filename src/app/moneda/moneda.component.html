@@ -1,0 +1,17 @@
+<h1 class="text-primary">CURRENCY PIPES</h1>
+<div>
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">VALOR</label>
+    <div class="col-sm-10">
+      <input type="text" name="valor" class="form-control" [(ngModel)]="moneda" id="valor">
+    </div>
+  </div>
+</div>
+
+<select [(ngModel)]="cambio" class="form-select" aria-label="Default select example">
+  <option selected>Seleccione el tipo de moneda</option>
+  <option value="USD">USD</option>
+  <option value="EUR">EUR</option>
+</select>
+
+<div *ngIf="moneda && cambio != '0'">RESULTADO:<b> {{moneda | currency: cambio}} </b></div>
